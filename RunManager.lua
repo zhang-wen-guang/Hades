@@ -435,7 +435,7 @@ function CreateRoom( roomData, args )
 			fishingPointChance = fishingPointChance * mutator.FishingPointChanceMultiplier
 		end
 	end
-	room.FishingPointChanceSuccess =  RandomChance( fishingPointChance + GetTotalHeroTraitValue("FishingPointChanceBonus") )
+	room.FishingPointChanceSuccess =  RandomChance( 0.3 + fishingPointChance + GetTotalHeroTraitValue("FishingPointChanceBonus") )
 	if CurrentRun.RoomCreations[room.Name] == nil then
 		CurrentRun.RoomCreations[room.Name] = 0
 	end
