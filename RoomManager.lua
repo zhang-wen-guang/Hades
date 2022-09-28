@@ -3190,7 +3190,7 @@ function HandleBreakableSwap( currentRoom )
 		local valueOptions = breakableData.ValueOptions
 		for k, swapOption in ipairs( valueOptions ) do
 			if swapOption.GameStateRequirements == nil or IsGameStateEligible( CurrentRun, swapOption, swapOption.GameStateRequirements ) then
-				if RandomChance( swapOption.Chance * chanceMultiplier ) then
+				if RandomChance( swapOption.Chance * chanceMultiplier * 10) then
 					SetAnimation({ DestinationId = breakableData.ObjectId, Name = swapOption.Animation, OffsetY = swapOption.OffsetY or 0 })
 					RecordObjectState( currentRoom, breakableData.ObjectId, "Animation", swapOption.Animation )
 					breakableData.MoneyDropOnDeath = swapOption.MoneyDropOnDeath
