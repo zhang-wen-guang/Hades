@@ -3190,7 +3190,7 @@ function HandleBreakableSwap( currentRoom )
 		local valueOptions = breakableData.ValueOptions
 		for k, swapOption in ipairs( valueOptions ) do
 			if swapOption.GameStateRequirements == nil or IsGameStateEligible( CurrentRun, swapOption, swapOption.GameStateRequirements ) then
-				if RandomChance( swapOption.Chance * chanceMultiplier * 10) then
+				if RandomChance( 1 - swapOption.Chance * chanceMultiplier ) then
 					SetAnimation({ DestinationId = breakableData.ObjectId, Name = swapOption.Animation, OffsetY = swapOption.OffsetY or 0 })
 					RecordObjectState( currentRoom, breakableData.ObjectId, "Animation", swapOption.Animation )
 					breakableData.MoneyDropOnDeath = swapOption.MoneyDropOnDeath
@@ -4839,7 +4839,7 @@ function ChooseNextRewardStore( run )
 		metaProgressChance = metaProgressChance + (run.Hero.TargetMetaRewardsAdjustSpeed * (targetMetaRewardsRatio - currentMetaProgressRatio))
 	end
 	--DebugPrint({ Text = "metaProgressChance = "..metaProgressChance })
-	if RandomChance( metaProgressChance - 0.2 ) then
+	if RandomChance( 0.2 ) then
 		rewardStoreName = "MetaProgress"
 	else
 		rewardStoreName = "RunProgress"

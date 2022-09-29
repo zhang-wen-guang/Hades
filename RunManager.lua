@@ -400,11 +400,11 @@ function CreateRoom( roomData, args )
 			secretChance = secretChance * mutator.SecretSpawnChanceMultiplier
 		end
 	end
-	secretChance = secretChance * 1.3
+	secretChance = secretChance * 3
 	room.SecretChanceSuccess =  RandomChance( secretChance )
 
 	local shrinePointDoorChance = room.ShrinePointDoorSpawnChance or RoomData.BaseRoom.ShrinePointDoorSpawnChance
-	shrinePointDoorChance = shrinePointDoorChance * 1.3
+	shrinePointDoorChance = shrinePointDoorChance * 3
 	room.ShrinePointDoorChanceSuccess =  RandomChance( shrinePointDoorChance )
 
 	local challengeChance = room.ChallengeSpawnChance or RoomData.BaseRoom.ChallengeSpawnChance
@@ -413,7 +413,7 @@ function CreateRoom( roomData, args )
 			challengeChance = challengeChance * mutator.ChallengeSpawnChanceMultiplier
 		end
 	end
-	challengeChance = challengeChance * 1.3
+	challengeChance = challengeChance * 3
 	room.ChallengeChanceSuccess = RandomChance( challengeChance )
 
 	local wellShopChance = room.WellShopSpawnChance or RoomData.BaseRoom.WellShopSpawnChance
@@ -422,7 +422,7 @@ function CreateRoom( roomData, args )
 			wellShopChance = wellShopChance * mutator.WellShopSpawnChanceMultiplier
 		end
 	end
-	wellShopChance = wellShopChance * 1.3
+	wellShopChance = wellShopChance * 2
 	room.WellShopChanceSuccess = RandomChance( wellShopChance )
 
 	local sellTraitShopChance = room.SellTraitShopChance or RoomData.BaseRoom.SellTraitShopChance
@@ -431,7 +431,7 @@ function CreateRoom( roomData, args )
 			sellTraitShopChance = sellTraitShopChance * mutator.SellTraitShopChanceMultiplier
 		end
 	end
-	sellTraitShopChance = sellTraitShopChance * 1.3
+	sellTraitShopChance = sellTraitShopChance * 2
 	room.SellTraitShopChanceSuccess = RandomChance( sellTraitShopChance )
 
 	local fishingPointChance = room.FishingPointChance or RoomData.BaseRoom.FishingPointChance
@@ -440,7 +440,7 @@ function CreateRoom( roomData, args )
 			fishingPointChance = fishingPointChance * mutator.FishingPointChanceMultiplier
 		end
 	end
-	fishingPointChance = fishingPointChance * 1.5
+	fishingPointChance = fishingPointChance * 6
 	room.FishingPointChanceSuccess =  RandomChance( fishingPointChance + GetTotalHeroTraitValue("FishingPointChanceBonus") )
 	if CurrentRun.RoomCreations[room.Name] == nil then
 		CurrentRun.RoomCreations[room.Name] = 0
